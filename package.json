@@ -1,15 +1,30 @@
 {
-  "name": "console-json",
-  "version": "1.0.0",
+  "name": "console-json-formatter-2",
+  "version": "1.0.9",
   "description": "",
-  "main": "src/index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/src/index.js",
+      "require": "./dist/src/index.js"
+    },
+    "./promise": {
+      "require": "./promise.js"
+    }
   },
-  "author": "",
+  "scripts": {
+    "build": "tsc --rootDir src --outDir dist",
+    "package": "npm run build && npm pack dist"
+  },
+  "module": "dist/src/index.js",
+  "author": "pookdeveloper@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.5.9",
     "typescript": "^5.2.2"
   }
 }

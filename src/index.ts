@@ -1,14 +1,17 @@
-"use strict";
-export function cjson_group(
-  json: any,
-  {
-    group,
-    text_group,
-  }: {
-    group: boolean;
-    text_group: string;
-  }
-): any {
+module.exports = {
+  cjson: cjson,
+  cjson_group: cjson_group,
+};
+
+export function cjson_group({
+  json,
+  group,
+  text_group,
+}: {
+  json: any;
+  group?: boolean;
+  text_group?: string;
+}): any {
   if (group) {
     console.groupCollapsed(text_group || "JSON Formated");
     console.log(JSON.stringify(json, null, "\t"));
@@ -19,6 +22,10 @@ export function cjson_group(
   return json;
 }
 
-export function cjson(json: any): any {
+export function fjson(json: any): any {
   return JSON.stringify(json, null, "\t");
+}
+
+export function cjson(json: any): any {
+  console.log(JSON.stringify(json, null, "\t"));
 }
