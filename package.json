@@ -1,6 +1,6 @@
 {
   "name": "console-json-formatter-2",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,5 +17,6 @@
   "devDependencies": {
     "@types/node": "^20.5.9",
     "typescript": "^5.2.2"
-  }
+  },
+  "dependencies": {}
 }
