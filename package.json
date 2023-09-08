@@ -1,26 +1,17 @@
 {
   "name": "console-json-formatter-2",
-  "version": "1.0.9",
+  "version": "1.0.12",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "files": [
     "dist/**/*"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/src/index.js",
-      "require": "./dist/src/index.js"
-    },
-    "./promise": {
-      "require": "./promise.js"
-    }
-  },
   "scripts": {
     "build": "tsc --rootDir src --outDir dist",
     "package": "npm run build && npm pack dist"
   },
-  "module": "dist/src/index.js",
   "author": "pookdeveloper@gmail.com",
   "license": "ISC",
   "devDependencies": {

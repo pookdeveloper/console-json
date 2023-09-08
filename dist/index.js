@@ -1,27 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cjson = exports.fjson = exports.cjson_group = void 0;
-module.exports = {
-    cjson: cjson,
-    cjson_group: cjson_group,
-};
-function cjson_group({ json, group, text_group, }) {
-    if (group) {
-        console.groupCollapsed(text_group || "JSON Formated");
-        console.log(JSON.stringify(json, null, "\t"));
-        console.groupEnd();
-    }
-    else {
-        console.log(JSON.stringify(json, null, "\t"));
-    }
-    return json;
+exports.fjson = exports.cgjson = void 0;
+function cgjson(json, text_group = "JSON Formatted") {
+    console.groupCollapsed(text_group);
+    console.log(JSON.stringify(json, null, "\t"));
+    console.groupEnd();
+    console.log(JSON.stringify(json, null, "\t"));
 }
-exports.cjson_group = cjson_group;
+exports.cgjson = cgjson;
 function fjson(json) {
     return JSON.stringify(json, null, "\t");
 }
 exports.fjson = fjson;
-function cjson(json) {
-    console.log(JSON.stringify(json, null, "\t"));
-}
-exports.cjson = cjson;
+module.exports = {
+    cgjson,
+    fjson,
+};
+//# sourceMappingURL=index.js.map
